@@ -1,13 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HTML Forms</title>
-    <link rel="stylesheet" href="/styles.css">
-</head>
-<body>
-    <input type="text">
-    <button>Submit</button>
-</body>
+    <link rel="stylesheet" href="/styles.css" />
+    <!-- Roboto font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>A very important form</h1>
+    </header>
+    <main>
+      <form action="/" method="GET" > <!-- "novalidate" is an optional attribute-->
+        <section>
+          <ul>
+            <li>
+              <label for="username">Your name</label>
+              <input type="text" name="user-name" id="username" required minlength="2"/>
+            </li>
+            <li>
+              <label for="useremail">Your email address</label>
+              <input type="email" name="user-email" id="useremail" />
+            </li>
+            <li>
+              <label for="userage">Your Age</label>
+              <input type="number" min="0" name="user-age" id="userage" />
+            </li>
+            <li>
+              <label for="userpassword">Your Password</label>
+              <input type="password" name="user-password" id="userpassword" />
+            </li>
+            <li>
+              <label for="userbirthdate">Your Birthday</label>
+              <input type="date" name="user-birthday" id="userbirthday" />
+            </li>
+          </ul>
+          <hr />
+          <label for="usermessage">Write a message from our sponsor</label>
+          <textarea name="" id="usermessage" cols="30" rows="10"></textarea>
+        </section>
+
+        <section>
+          <label for="usercolour">What's your favourite colour?</label>
+          <select name="user-colour" id="usercolour">
+            <option value="purple">Purple</option>
+            <option value="orange">Orange</option>
+            <option value="red">Red</option>
+          </select>
+        </section>
+
+        <hr />
+
+        <section>
+          <label for="verifymethod">How should we verify your account?</label>
+          <ul>
+            <li class="form-control-inline">
+              <input
+                type="radio"
+                name="verifymethod"
+                id="verify-email"
+                value="email"
+              />
+              <label for="verify-email">Via email</label>
+            </li>
+            <li class="form-control-inline">
+              <input
+                type="radio"
+                name="verifymethod"
+                id="verify-phone"
+                value="phone"
+              />
+              <label for="verify-phone">Via phone call</label>
+            </li>
+            <li class="form-control-inline">
+              <input type="checkbox" name="contact" value="phone" />
+              <label>Contact via phone?</label>
+            </li>
+            <li class="form-control-inline">
+              <input type="checkbox" name="contact" value="email" />
+              <label>Contact via email?</label>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <div class="form-control-inline">
+            <input type="checkbox" name="terms" id="terms" />
+            <label for="verify-sms">Agree to terms?</label>
+          </div>
+        </section>
+
+        <section>
+          <div id="buttons">
+            <button>Submit</button>
+            <button type="reset">Reset</button>
+          </div>
+        </section>
+      </form>
+    </main>
+  </body>
 </html>
